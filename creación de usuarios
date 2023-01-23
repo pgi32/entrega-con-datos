@@ -1,0 +1,13 @@
+use club_de_la_mortal;
+ -- primer usuario creado
+ create user "Julian" identified by "julian123"; -- primer usuario creado
+ 
+ grant select on  club_de_la_mortal to "julian"; -- en este caso olo lo autorizo a solo lectura a este usuario
+
+ 
+-- creo el segundo usuario
+
+create user "Federico" identified by "fede123"; -- usuario y contraseña
+grant select on club_de_la_mortal to "Federico"; -- permiso de lectura paa el segund usuario
+grant select, insert on club_de_la_mortal to "Federico"; -- permiso de insercion de datos para el usuario
+grant select, update on club_de_la_mortal to "Federico"; -- permiso para modificar un dato
