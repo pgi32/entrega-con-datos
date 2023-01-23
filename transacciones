@@ -1,0 +1,40 @@
+-- en la primera parte del ejercicio hago insercion de datos ya que son horarios nuevos
+ start transaction;
+ insert into clases (clase, horario, dia, profesor) values
+					("bascula", 15, "miercoles", "juan");
+insert into clases (clase, horario, dia, profesor) values
+					("parada de manos", 19, "viernes", "esteban");
+insert into clases (clase, horario, dia, profesor) values
+					("tricking", 10, "miercoles", "gaston");
+insert into clases (clase, horario, dia, profesor) values
+					("acrobacia de piso", 10, "viernes", "federico");
+
+-- commit;
+-- rollback;
+
+-- segunda parte hago ingreso de 8 alumnos nuevos
+
+start transaction;
+insert into alumnos (nombre, dni, tel, email, abono, clase, profesor) values
+					("meredes",31542623, 111234985, 4400, "acrobacia de piso", "federico");
+insert into alumnos (nombre, dni, tel, email, abono, clase, profesor) values
+					("alejo",30459627, 1154232677, 4400, "parada de manos", "estebn");
+insert into alumnos (nombre, dni, tel, email, abono, clase, profesor) values
+					("betina",42657890, 1153498880, 4400, "entrenamiento acrobatico", "mauro");
+insert into alumnos (nombre, dni, tel, email, abono, clase, profesor) values
+					("carolina",38989976, 1131451020, 4400, "acrobacia avanzados", "federico");
+
+savepoint alumnos_nuevos1;
+
+insert into alumnos (nombre, dni, tel, email, abono, clase, profesor) values
+					("camila",37625414, 1144556689, 4400, "acrobacia de piso", "federico");
+insert into alumnos (nombre, dni, tel, email, abono, clase, profesor) values
+					("gaston",45843899, 1166775409, 4400, "parada de manos ", "lourdes");
+insert into alumnos (nombre, dni, tel, email, abono, clase, profesor) values
+					("karen",37850211, 1156128035, 4400, "entrenamiento acrobatico", "mauro");
+insert into alumnos (nombre, dni, tel, email, abono, clase, profesor) values
+					("manuela",40234569, 1125116713, 4400, "bascula", "juan");
+
+savepoint alumnos_nuevos2;
+
+-- release savepoint alumnos_nuevos1;
