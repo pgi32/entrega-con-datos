@@ -12,8 +12,9 @@ create table clases (
                     );
                     
 -- creacio de clave foranea de clases
-alter table clases add constraint fk1_clases foreign key (profesor)
-references profesores (nombre);
+-- alter table clases add constraint fk1_clases foreign key (profesor)
+-- references profesores (nombre);
+alter table clases add foreign key (profesor) references profesores (nombre);
 
 /*tabla de precios*/
 -- aca hice una modificacion con respecto a la tabla de la primera entrega y el precio lo puse por abonos y al seminario le puse su precio por sepaarado
